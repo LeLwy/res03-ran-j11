@@ -92,6 +92,10 @@ body > main > section > form fieldset > .error-displayed{
     font-size: .8em;
 }
 
+.red-border{
+    border: solid var(--rouge) 1px;
+}
+
 /****************FORMULAIRES****************/
 
 body > main > section > form{
