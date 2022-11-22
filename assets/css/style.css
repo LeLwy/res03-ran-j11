@@ -88,12 +88,9 @@ body > main > section > header > h2{
 }
 
 body > main > section > form fieldset > .error-displayed{
+    margin-bottom: 1vh;
     color: var(--rouge);
     font-size: .8em;
-}
-
-.red-border{
-    border: solid var(--rouge) 1px;
 }
 
 /****************FORMULAIRES****************/
@@ -127,6 +124,16 @@ body > main > section > #connectInfos > fieldset > input{
     border-style: none;
 }
 
+body > main > section > #connectInfos > fieldset > input.red-border{
+    border: solid var(--rouge) 1px;
+}
+
+body > main > section > #connectInfos > fieldset > label > span.redStar{
+    font-size: 1.5em;
+    margin-left: .5vw;
+    color: var(--rouge);
+}
+
 /*******FORMULAIRE-2 #profilPro*******/
 
 body > main > section > #profilPro > h3{
@@ -140,7 +147,7 @@ body > main > section > #profilPro > div{
     grid-template-columns: repeat(2, 1fr);
 }
 
-body > main > section > #profilPro > div > div{
+body > main > section > #profilPro > div > fieldset{
     margin: 1vh 1vw;
 }
 
@@ -151,7 +158,7 @@ body > main > section > #intCenter > div{
     grid-template-columns: repeat(2, 1fr);
 }
 
-body > main > section > #intCenter > div > div{
+body > main > section > #intCenter > div > fieldset{
     margin: 1vh;
 }
 

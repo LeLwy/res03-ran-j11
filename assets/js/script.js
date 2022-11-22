@@ -1,36 +1,26 @@
-let sections = document.querySelectorAll("body > main > section");
-//let forms = document.querySelectorAll("body > main > section > form");
-//let inputs = document.querySelectorAll("body > main > section > form input")
-//let subBtn = document.querySelectorAll("body > main > section > form > .subBtn");
-
-// RECUPERATION DES FORMULAIRES
-
 let connectInfosForm = document.getElementById("connectInfos");
-let profilProForm = document.getElementById("profilPro");
-let intCenterForm = document.getElementById("intCenter");
-
-//RECUPERATION DES INPUTS SUBMIT POUR CHAQUE FORMULAIRE
-
-// RECUPERATION DES INPUTS PASSWORD
-
-let connectInfosFormOK = true;
+let connectInfosFormOk = true;
 
 connectInfosForm.addEventListener("submit", function(e){
 
     e.preventDefault(); // stopper la soumission auto
 
     let userName = document.querySelector("body > main > section > #connectInfos > fieldset > #userName");
+    let userNameSpan = document.createElement("span");
     
     if(userName.value === ""){
         
         let userNameFieldset = document.querySelector("body > main > section > #connectInfos > fieldset:nth-child(1)");
         let userNameError = document.createElement("p");
+        let labelUserName = document.querySelector("body > main > section > #connectInfos > fieldset:nth-child(1) > label")
         userName.classList.add("red-border");
         userNameError.innerHTML= "Veuillez choisir un nom d'utilisateur";
         userNameError.classList.add("error-displayed");
-        userNameFieldset.appendChild(userNameError)
-        connectInfosFormOK = false;
-        console.log(connectInfosFormOK)
+        userNameFieldset.appendChild(userNameError);
+        userNameSpan.innerHTML = "*";
+        userNameSpan.classList.add("redStar");
+        labelUserName.appendChild(userNameSpan);
+        connectInfosFormOk = false;
     }
 
     let email = document.querySelector("body > main > section > #connectInfos > fieldset > #email");
@@ -39,10 +29,11 @@ connectInfosForm.addEventListener("submit", function(e){
 
         let emailFieldset = document.querySelector("body > main > section > #connectInfos > fieldset:nth-child(2)");
         let emailError = document.createElement("p");
+        email.classList.add("red-border");
         emailError.innerHTML= "Veuillez choisir un email valide";
         emailError.classList.add("error-displayed");
         emailFieldset.appendChild(emailError);
-        connectInfosFormOK = false;
+        connectInfosFormOk = false;
     }  
 
     let password = document.querySelector("body > main > section > #connectInfos > fieldset > #password");
@@ -52,19 +43,33 @@ connectInfosForm.addEventListener("submit", function(e){
 
         let passwordFieldset = document.querySelector("body > main > section > #connectInfos > fieldset:nth-child(4)");
         let passwordError = document.createElement("p");
+        password.classList.add("red-border");
+        confirmPassword.classList.add("red-border");
         passwordError.innerHTML= "Les mots de passe ne corespondent pas";
         passwordError.classList.add("error-displayed");
         passwordFieldset.appendChild(passwordError);
-        connectInfosFormOK = false;
+        connectInfosFormOk = false;
     }
 
-    // if(connectInfosFormOK = true){
+    // if(connectInfosFormOk = true){
 
     //     e.target.submit(); // le soumettre Ã  la main
     // }
 })
 
 
+let profilProForm = document.getElementById("profilPro");
+let profilProFormOk = true;
+
+    profilProForm.addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        let profilProFormGradeInputs = this.querySelectorAll("body > main > section > #profilPro > div#grade-inputs > fieldset > input");
+        let profilProFormDevInputs = this.querySelectorAll("body > main > section > #profilPro > div#dev-inputs > fieldset > input");
+
+        
+    })
 
 
 
