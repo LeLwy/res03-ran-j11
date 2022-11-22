@@ -1,0 +1,159 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/****************POLICE ET COULEURS****************/
+
+/**POLICE**/
+
+/*  
+font-family: 'Work Sans', sans-serif;
+    font-family: 'Oswald', sans-serif
+/*
+
+/**COULEURS**/
+
+:root{
+
+    --bleu : #3a61ef;  
+    --bleu-foncé : #253879;  
+    --bleu-clair : #dfe4f7;  
+    --blanc-cassé : #eafbf0;  
+    --blanc : #ffffff;  
+    --rouge : #d9022f;  
+   --vert : #1e7062;  
+    --noir : #0d0f0f;
+}
+
+/****************BODY****************/
+
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+
+/****************HEADER****************/
+
+body > header{
+    text-align: center;
+    background-color: var(--blanc);
+    padding:3vh;
+}
+
+body > header > h1{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2.5em;
+    color: var(--bleu-foncé);
+}
+/****************MAIN****************/
+
+body > main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/****************SECTION****************/
+
+body > main > section{
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    opacity: .3;
+}
+
+body > main > section.active{
+    opacity: 1;
+}
+
+body > main > section:nth-child(2n){
+    border-left: solid var(--noir) 1px;
+    border-right: solid var(--noir) 1px;
+}
+
+body > main > section > header{
+    grid-row: 1/2;
+    text-align: center;
+    background-color: var(--bleu);
+    padding: 4vh;
+}
+
+body > main > section > header > h2{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: var(--blanc-cassé);
+}
+
+body > main > section > form fieldset > .error-displayed{
+    color: var(--rouge);
+    font-size: .8em;
+}
+
+/****************FORMULAIRES****************/
+
+body > main > section > form{
+    grid-row: 2/3;
+    padding: 4vh 2vw;
+    background-color: var(--blanc);
+}
+
+body > main > section > form > .subBtn{
+    margin-top: 8vh;
+    padding: 1vh 2vw;
+    max-width: fit-content;
+    background-color: var(--bleu);
+    color: var(--blanc);
+    border-style: none;
+}
+
+body > main > section > form fieldset{
+    border-style: none;
+}
+
+/*******FORMULAIRE-1 #connectinfos*******/
+
+body > main > section > #connectInfos > fieldset > input{
+    margin: 2vh 0;
+    padding: 1vh 1vw;
+    width: 100%;
+    background-color: var(--bleu-clair);
+    border-style: none;
+}
+
+/*******FORMULAIRE-2 #profilPro*******/
+
+body > main > section > #profilPro > h3{
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+
+body > main > section > #profilPro > div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+body > main > section > #profilPro > div > div{
+    margin: 1vh 1vw;
+}
+
+/*******FORMULAIRE-3 #intCenter*******/
+
+body > main > section > #intCenter > div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+body > main > section > #intCenter > div > div{
+    margin: 1vh;
+}
+
+/****************FOOTER****************/
+
+body > footer{
+    padding: 2vh;
+    background-color: var(--bleu-foncé);
+}
